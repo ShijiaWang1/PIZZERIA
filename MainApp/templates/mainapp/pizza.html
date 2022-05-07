@@ -1,0 +1,26 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+<p>
+    Pizza: {{ pizza }}
+
+
+</p>
+
+<ul>
+    {% for topping in toppings %}
+    <li>
+        <p>Toppings list</p>
+        <p>{{ topping}}</p>
+    </li>
+    {% empty %}
+    <li>There are no toppings for this post yet.</li>
+    {% endfor %}
+</ul>
+<p>
+<a href="{% url 'MainApp:new_comment' pizza.id %}">Add a new comment</a>
+</p>
+
+
+{% endblock content %}

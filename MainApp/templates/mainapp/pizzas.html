@@ -1,0 +1,28 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+
+<P>Click the links below for topping detail</P>
+
+<ul>
+    {% for pizza in pizzas %}
+    <li>
+        <a href="{% url 'MainApp:pizza' pizza.id %}">{{pizza}}</a>
+
+    
+    </li>
+    {% empty %}
+    <li>No Pizza have been added yet.</li>
+    {% endfor %}
+</ul>
+<p> {% load static %} <img src="{% static "dj_app/media/HawaiianPizza.jpg" %}" alt="index" /> </p>
+
+<p> {% load static %} <img src="{% static "dj_app/media/BBQChicken.jpg" %}" alt="index" /> </p>
+
+<p> {% load static %} <img src="{% static "dj_app/media/Pepperoni.jpg" %}" alt="index" /> </p>
+
+
+
+
+{% endblock content %}
